@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { FormularioContatoComponent } from './formulario-contato.component';
+import { FormularioContatoComponent } from './FormularioContatoComponent';
 
 describe('FormularioContatoComponent', () => {
   let component: FormularioContatoComponent;
@@ -11,7 +11,7 @@ describe('FormularioContatoComponent', () => {
       imports: [FormularioContatoComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(FormularioContatoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

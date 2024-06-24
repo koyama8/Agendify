@@ -6,7 +6,7 @@ import { CabecalhoComponent } from './componentes/cabecalho/cabecalho.component'
 import { SeparadorComponent } from './componentes/separador/separador.component';
 import { ContatoComponent } from './componentes/contato/contato.component';
 import { FormsModule } from '@angular/forms';
-import { FormularioContatoComponent } from './paginas/formulario-contato/formulario-contato.component';
+import { FormularioContatoComponent } from './paginas/formulario-contato/FormularioContatoComponent';
 
 interface Contato {
   id: number;
