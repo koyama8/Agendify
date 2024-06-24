@@ -31,4 +31,11 @@ export class FormularioContatoComponent {
       observacoes: new FormControl('Hello')
     })
   }
+
+  salvarContato(){
+    console.log(this.contatoForm.value);
+  }
+  cancelar(){
+    console.log('Submissão cancelada')
+  }
 }
