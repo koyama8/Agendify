@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ContainerComponent } from '../../componentes/container/container.component';
 import { SeparadorComponent } from '../../componentes/separador/separador.component';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { ContatoService } from '../../services/contato.service';
 
 @Component({
@@ -19,36 +19,42 @@ import { ContatoService } from '../../services/contato.service';
   templateUrl: './formulario-contato.component.html',
   styleUrl: './formulario-contato.component.css'
 })
-export class FormularioContatoComponent implements OnInit{
+export class FormularioContatoComponent implements OnInit {
 
 
   contatoForm!: FormGroup;
 
-  constructor(private contatoService:ContatoService){
+  constructor(
+    private contatoService: ContatoService,
+    private router: Router
+  ) {
 
   }
 
 
   ngOnInit(): void {
-      this.inicializarFormulario();
+    this.inicializarFormulario();
   }
 
-  inicializarFormulario(){
+  inicializarFormulario() {
     this.contatoForm = new FormGroup({
-      nome: new FormControl('',Validators.required),
-      telefone: new FormControl('',Validators.required),
-      email: new FormControl('',[Validators.required, Validators.email]),
+      nome: new FormControl('', Validators.required),
+      telefone: new FormControl('', Validators.required),
+      email: new FormControl('', [Validators.required, Validators.email]),
       aniversario: new FormControl(''),
       redes: new FormControl(''),
       observacoes: new FormControl('')
     })
   }
 
-  salvarContato(){
+  salvarContato() {
     const novoContato = this.contatoForm.value;
-    this.contatoService.salvarContato(novoContato);
+    this.contatoService.salvarContato(novoContato)
+    this.contatoForm.reset()
+    this.router.navigateByUrl('/lista-contatos')
   }
-  cancelar(){
-    console.log('Submissão cancelada')
+
+  cancelar() {
+    this.contatoForm.reset();
   }
 }
