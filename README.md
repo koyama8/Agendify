@@ -11,7 +11,7 @@ O projeto Indexa é uma agenda digital onde o usuário pode inserir contatos uti
 
   # 📜 Principais funcionalidades
 
-- Adicionar contatos com título, descrição e imagem;
+- Adicionar contatos com dados em geral, descrição e imagem;
 - Editar e excluir contatos;
 - Adicionar e visualizar contatos;
 - Utilizar um CRUD completo e realizar requisições HTTP para manipulação dos dados;
