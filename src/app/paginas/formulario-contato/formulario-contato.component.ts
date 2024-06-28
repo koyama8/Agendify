@@ -5,6 +5,7 @@ import { SeparadorComponent } from '../../componentes/separador/separador.compon
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink, ActivatedRoute } from '@angular/router';
 import { ContatoService } from '../../services/contato.service';
+import { MensagemErroComponent } from '../../componentes/mensagem-erro/mensagem-erro.component';
 
 @Component({
   selector: 'app-formulario-contato',
@@ -14,7 +15,8 @@ import { ContatoService } from '../../services/contato.service';
     ContainerComponent,
     SeparadorComponent,
     ReactiveFormsModule,
-    RouterLink
+    RouterLink,
+    MensagemErroComponent
   ],
   templateUrl: './formulario-contato.component.html',
   styleUrl: './formulario-contato.component.css'
@@ -50,7 +52,7 @@ export class FormularioContatoComponent implements OnInit {
     })
   }
 
-  carregarContato(){
+  carregarContato() {
     const id = this.activatedRoute.snapshot.paramMap.get('id');
     if (id) {
       this.contatoService.buscarPorId(parseInt(id)).subscribe((contato) => {
@@ -71,17 +73,17 @@ export class FormularioContatoComponent implements OnInit {
 
   }
 
-  aoSelecionarArquivo(event: any){
+  aoSelecionarArquivo(event: any) {
     const file: File = event.target.files[0]
-    if(file){
+    if (file) {
       this.lerArquivo(file)
     }
   }
 
-  lerArquivo(file: File){
+  lerArquivo(file: File) {
     const reader = new FileReader();
-    reader.onload = () =>{
-      if(reader.result){
+    reader.onload = () => {
+      if (reader.result) {
         this.contatoForm.get('avatar')?.setValue(reader.result)
       }
     }
@@ -92,5 +94,13 @@ export class FormularioContatoComponent implements OnInit {
     this.contatoForm.reset();
     this.router.navigateByUrl('/lista-contatos')
 
+  }
+
+  obterControle(nome: string): FormControl {
+    const control = this.contatoForm.get(nome);
+    if (!control) {
+      throw new Error('Controle de formulário não encontrado:' + nome)
+    }
+    return control as FormControl
   }
 }
