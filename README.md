@@ -3,7 +3,7 @@
 Este projeto foi criado com o [Angular CLI](https://github.com/angular/angular-cli) versão 17.0.0.
 
 > [!IMPORTANT]
-> O projeto Indexa é uma agenda digital onde o usuário pode inserir contatos utilizando um formulário com validações, e esses dados são processados por uma API através de requisições HTTP. O sistema permite a adição, edição e exclusão de contatos.
+> O projeto Agendify é uma agenda digital onde o usuário pode inserir contatos utilizando um formulário com validações, e esses dados são processados por uma API através de requisições HTTP. O sistema permite a adição, edição e exclusão de contatos.
 
 ## 📹 Demonstração do Projeto
 
