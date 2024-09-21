@@ -13,7 +13,7 @@ Confira a demonstração do projeto no vídeo abaixo:
 
 ## 🚀 Como instalar
 
-- Baixe ou clone este repositório usando `git clone https://github.com/koyama8/Indexa.git`;
+- Baixe ou clone este repositório usando `git clone https://github.com/koyama8/Agendify.git`;
 - Dentro do diretório, instale as dependências usando `npm install`.
 
 ## 📜 Principais funcionalidades
