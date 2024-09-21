@@ -7,6 +7,7 @@ header .cabecalho-link {
 header .cabecalho-link img {
   align-self: center;
   margin-bottom: 56px;
+  margin-left:50px;
 }
 
 header .cabecalho-link div {
